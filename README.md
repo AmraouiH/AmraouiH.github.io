@@ -103,7 +103,7 @@
     <p>If the extension's behavior changes, this page will be updated and the date above revised.</p>
 
     <h2>Contact</h2>
-    <p>Questions about this policy: <strong>[your contact email]</strong></p>
+    <p>Questions about this policy: <strong>hamzamraoui11@gmail.com</strong></p>
 
     <p class="muted">
       Dynamics 365 Form Analyzer is an independent tool. It is not affiliated with, endorsed by or sponsored by
