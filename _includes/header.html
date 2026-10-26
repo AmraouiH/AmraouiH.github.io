@@ -1,0 +1,22 @@
+<header>
+    <a class="header-name" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
+    <nav>
+        <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">&#9776;</button>
+        <ul class="nav-menu">
+            {% for item in site.nav %}
+            <li><a href="{{ item.url | relative_url }}" class="{% if page.url == item.url %}active{% endif %}">{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+</header>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.nav-menu');
+    toggle.addEventListener('click', function() {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', !expanded);
+        menu.classList.toggle('nav-menu-visible');
+    });
+});
+</script>

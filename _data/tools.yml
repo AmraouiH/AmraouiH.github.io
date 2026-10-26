@@ -1,0 +1,89 @@
+# XrmToolBox tools. `nuget` is the package id on nuget.org (also used for the XrmToolBox
+# Tool Library URL and the live download counter). Leave `nuget` empty for unreleased tools.
+- name: Entity Fields Analyser
+  icon: "📊"
+  year: 2021
+  nuget: EntityFieldsAnalyser
+  github: https://github.com/AmraouiH/Entity-Field-Analyser
+  downloads: 58640
+  summary: >-
+    Un reporting global sur l'état de santé d'une entité et la vérification du volume des champs utilisés,
+    avec des graphiques pour rendre l'analyse lisible.
+
+- name: Bulk Prefix/Suffix Fields Name
+  icon: "🏷️"
+  year: 2021
+  nuget: BulkPrefixSuffixFieldsName
+  github: https://github.com/AmraouiH/Prefix-Suffix-Fields-Name
+  downloads: 20233
+  summary: >-
+    Préfixer ou suffixer en masse le nom des champs, pour faciliter la tâche des développeurs.
+
+- name: Dataverse Cartographer
+  icon: "🗺️"
+  year: 2026
+  nuget: DataverseCartographer
+  github: https://github.com/AmraouiH/DataverseCartographer
+  downloads: 157
+  summary: >-
+    Cartographie interactive d'une organisation Dynamics 365 / Dataverse : tables et relations 1:N, N:1, N:N
+    filtrables par solution ou par application pilotée par modèle, chaînes « table → step → plugin → table »
+    issues d'une analyse statique des assemblies, et chaînes « table → événement de formulaire → librairie → appel Web API ».
+  details: >-
+    Export PNG / SVG / Mermaid / PlantUML / Excel, pour documenter un modèle de données ou préparer une analyse d'impact.
+
+- name: System Jobs Doctor
+  icon: "🩺"
+  year: 2026
+  nuget: SystemJobsDoctor
+  github: https://github.com/AmraouiH/SystemJobsDoctor
+  downloads: 115
+  summary: >-
+    Diagnostic et nettoyage des system jobs (asyncoperation) : comptages serveur exacts au-delà de la limite
+    d'agrégation de 50 000 lignes, erreurs regroupées par cause, trace logs de plugins par correlation id.
+  details: >-
+    Reprise, annulation, report et suppression en masse par lots ExecuteMultiple, bulk deletion job pour libérer du stockage, rapport Excel.
+
+- name: Dataverse Record Recovery
+  icon: "♻️"
+  year: 2026
+  nuget: DataverseRecordRecovery
+  github: https://github.com/AmraouiH/DataverseRecordRecovery
+  downloads: 355
+  summary: >-
+    Restauration des enregistrements supprimés par erreur à partir de l'historique d'audit, avec leur GUID d'origine :
+    suppressions en cascade, parents manquants, associations N:N, lookups et statuts.
+  details: >-
+    Aperçu complet du plan de restauration avant toute écriture, comparaison valeur par valeur et journal de reprise.
+
+- name: Solution Component Extractor
+  icon: "🧩"
+  year: 2026
+  nuget: SolutionComponentExtractor
+  github: https://github.com/AmraouiH/SolutionComponentExtractor
+  downloads: 440
+  summary: >-
+    Extraction d'une sous-solution à partir d'une solution non managée, pour ne livrer qu'un hotfix ou une fonctionnalité :
+    sélection des composants, aperçu live de customizations.xml et solution.xml, nettoyage des dépendances.
+  details: >-
+    Génération du .zip ou import direct dans l'environnement connecté, avec des avertissements sur les imports à risque.
+
+- name: MergeIt – Record Merger for Dataverse
+  icon: "🔀"
+  year: 2026
+  nuget: MergeIt-RecordMergerForDataverse
+  github: https://github.com/AmraouiH/MergeIt
+  downloads: 132
+  summary: >-
+    Fusion de deux enregistrements champ par champ : comparaison côte à côte, choix des valeurs conservées,
+    fusion transactionnelle ou merge natif Dataverse (account, contact, lead, incident), réaffectation des enregistrements enfants.
+
+- name: Phone Number Normalizer
+  icon: "📞"
+  year: 2026
+  nuget: ""
+  github: ""
+  downloads: 0
+  summary: >-
+    Normalisation des numéros de téléphone Dataverse aux formats E.164, international ou national via libphonenumber :
+    analyse préalable, exclusion ligne à ligne, mise à jour par lots ExecuteMultiple avec dry run et rapport CSV.

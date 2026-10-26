@@ -1,0 +1,13 @@
+# Browser extensions. Fill `store` with the Chrome Web Store URL once the listing is live.
+- name: Form Analyzer for Dynamics 365
+  icon: "🔎"
+  year: 2026
+  store: ""
+  privacy: /privacy/
+  summary: >-
+    Extension Chrome (Manifest V3) qui analyse le formulaire piloté par modèle ouvert dans l'onglet actif et produit
+    un rapport de bonnes pratiques : structure, performance, grilles, JavaScript (API client dépréciées, DOM / jQuery,
+    requêtes synchrones, OData v2), web resources HTML, données et logique.
+  details: >-
+    Export du rapport en HTML autonome ou en JSON, interface anglais / français. Tout s'exécute dans le navigateur :
+    aucune donnée collectée ni transmise.

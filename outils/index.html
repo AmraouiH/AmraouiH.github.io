@@ -1,0 +1,74 @@
+---
+layout: default
+title: Outils
+description: Outils XrmToolBox et extension Chrome pour Dynamics 365 / Dataverse développés par Hamza Amraoui.
+---
+<div class="page-header">
+    <h1>Outils</h1>
+    <p>Plugins XrmToolBox et extension Chrome open source pour Dynamics 365 / Dataverse.<br />
+    <strong><span id="total-downloads">80k+</span></strong> téléchargements cumulés sur la XrmToolBox Tool Library.</p>
+</div>
+
+<div class="container">
+    <div class="entry column" id="xrmtoolbox">
+        <h2>Outils XrmToolBox</h2>
+        {% for tool in site.data.tools %}
+        <div class="tool">
+            <h3>{{ tool.icon }} {{ tool.name }}
+                {% if tool.nuget != "" %}
+                <span class="badge" data-nuget="{{ tool.nuget }}">{{ tool.downloads }} téléchargements</span>
+                {% else %}
+                <span class="badge soon">Bientôt disponible</span>
+                {% endif %}
+            </h3>
+            <div class="meta">XrmToolBox - {{ tool.year }}</div>
+            <p>{{ tool.summary }}</p>
+            {% if tool.details %}<p>{{ tool.details }}</p>{% endif %}
+            <div class="tool-links">
+                {% if tool.nuget != "" %}
+                <a class="button" href="https://www.xrmtoolbox.com/plugins/{{ tool.nuget }}/" target="_blank" rel="noopener">XrmToolBox</a>
+                <a class="button secondary" href="https://www.nuget.org/packages/{{ tool.nuget }}" target="_blank" rel="noopener">NuGet</a>
+                {% endif %}
+                {% if tool.github != "" %}
+                <a class="button secondary" href="{{ tool.github }}" target="_blank" rel="noopener">Code source</a>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container">
+    <div class="entry column" id="extension-chrome">
+        <h2>Extension Chrome</h2>
+        {% for ext in site.data.extensions %}
+        <div class="tool">
+            <h3>{{ ext.icon }} {{ ext.name }}
+                {% if ext.store == "" %}<span class="badge soon">Bientôt sur le Chrome Web Store</span>{% endif %}
+            </h3>
+            <div class="meta">Extension Chrome (Manifest V3) - {{ ext.year }}</div>
+            <p>{{ ext.summary }}</p>
+            {% if ext.details %}<p>{{ ext.details }}</p>{% endif %}
+            <div class="tool-links">
+                {% if ext.store != "" %}
+                <a class="button" href="{{ ext.store }}" target="_blank" rel="noopener">Chrome Web Store</a>
+                {% endif %}
+                <a class="button secondary" href="{{ ext.privacy | relative_url }}">Politique de confidentialité</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container">
+    <div class="entry column">
+        <h2>Installer un outil XrmToolBox</h2>
+        <ol>
+            <li>Ouvrez <a class="strong-link" href="https://www.xrmtoolbox.com/" target="_blank" rel="noopener">XrmToolBox</a> puis le <strong>Tool Library</strong>.</li>
+            <li>Recherchez le nom de l'outil, cochez-le et cliquez sur <strong>Install</strong>.</li>
+            <li>Connectez-vous à votre environnement Dataverse et lancez l'outil.</li>
+        </ol>
+    </div>
+</div>
+
+<script src="{{ '/assets/downloads.js' | relative_url }}"></script>
