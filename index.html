@@ -30,7 +30,14 @@ layout: default
             </div>
             <div class="hero-visual reveal">
                 <div class="avatar-ring">
-                    <img src="{{ site.author.avatar }}&s=720" alt="Portrait of {{ site.author.name }}" />
+                    {% if site.author.photo %}
+                    <img src="{{ site.author.photo | relative_url }}" alt="Portrait of {{ site.author.name }}" />
+                    {% else %}
+                    <div class="monogram" role="img" aria-label="{{ site.author.name }}">
+                        <span class="monogram-initials">HA</span>
+                        <span class="monogram-code">&lt;Dynamics365 /&gt;</span>
+                    </div>
+                    {% endif %}
                 </div>
                 <div class="float-card one"><span class="emoji">🧰</span><div><strong>{{ site.data.tools.size }} tools</strong>on XrmToolBox</div></div>
                 <div class="float-card two"><span class="emoji">🏅</span><div><strong>MB-210</strong>Certified</div></div>
