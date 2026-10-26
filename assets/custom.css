@@ -1030,3 +1030,11 @@ nav {
 .hero h1 {
     overflow-wrap: anywhere;
 }
+
+.hero h1 .gradient-text {
+    white-space: nowrap;
+}
+
+.float-card.one {
+    bottom: -22px;
+}
