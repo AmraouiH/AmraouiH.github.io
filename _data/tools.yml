@@ -6,9 +6,10 @@
   nuget: EntityFieldsAnalyser
   github: https://github.com/AmraouiH/Entity-Field-Analyser
   downloads: 58640
+  featured: true
   summary: >-
-    Un reporting global sur l'état de santé d'une entité et la vérification du volume des champs utilisés,
-    avec des graphiques pour rendre l'analyse lisible.
+    A health report for any table: checks how much each field is actually used and shows it in charts,
+    so you know which columns are worth keeping.
 
 - name: Bulk Prefix/Suffix Fields Name
   icon: "🏷️"
@@ -16,8 +17,9 @@
   nuget: BulkPrefixSuffixFieldsName
   github: https://github.com/AmraouiH/Prefix-Suffix-Fields-Name
   downloads: 20233
+  featured: true
   summary: >-
-    Préfixer ou suffixer en masse le nom des champs, pour faciliter la tâche des développeurs.
+    Adds a prefix or suffix to the display names of many fields in one go, instead of editing them one by one.
 
 - name: Dataverse Cartographer
   icon: "🗺️"
@@ -26,11 +28,9 @@
   github: https://github.com/AmraouiH/DataverseCartographer
   downloads: 157
   summary: >-
-    Cartographie interactive d'une organisation Dynamics 365 / Dataverse : tables et relations 1:N, N:1, N:N
-    filtrables par solution ou par application pilotée par modèle, chaînes « table → step → plugin → table »
-    issues d'une analyse statique des assemblies, et chaînes « table → événement de formulaire → librairie → appel Web API ».
-  details: >-
-    Export PNG / SVG / Mermaid / PlantUML / Excel, pour documenter un modèle de données ou préparer une analyse d'impact.
+    An interactive map of a Dataverse org: tables and 1:N, N:1, N:N relationships filtered by solution or app,
+    table → step → plugin chains from static assembly analysis, and form event → library → Web API chains.
+    Exports to PNG, SVG, Mermaid, PlantUML and Excel.
 
 - name: System Jobs Doctor
   icon: "🩺"
@@ -39,10 +39,8 @@
   github: https://github.com/AmraouiH/SystemJobsDoctor
   downloads: 115
   summary: >-
-    Diagnostic et nettoyage des system jobs (asyncoperation) : comptages serveur exacts au-delà de la limite
-    d'agrégation de 50 000 lignes, erreurs regroupées par cause, trace logs de plugins par correlation id.
-  details: >-
-    Reprise, annulation, report et suppression en masse par lots ExecuteMultiple, bulk deletion job pour libérer du stockage, rapport Excel.
+    Diagnoses and cleans up system jobs: exact counts past the 50,000-row aggregate limit, errors grouped by cause,
+    plugin trace logs by correlation id, and bulk resume, cancel, postpone or delete with ExecuteMultiple.
 
 - name: Dataverse Record Recovery
   icon: "♻️"
@@ -51,10 +49,8 @@
   github: https://github.com/AmraouiH/DataverseRecordRecovery
   downloads: 355
   summary: >-
-    Restauration des enregistrements supprimés par erreur à partir de l'historique d'audit, avec leur GUID d'origine :
-    suppressions en cascade, parents manquants, associations N:N, lookups et statuts.
-  details: >-
-    Aperçu complet du plan de restauration avant toute écriture, comparaison valeur par valeur et journal de reprise.
+    Restores deleted records from the audit history with their original GUID, including cascade-deleted children,
+    N:N associations, lookups and status. Shows the full restore plan before writing anything.
 
 - name: Solution Component Extractor
   icon: "🧩"
@@ -63,20 +59,18 @@
   github: https://github.com/AmraouiH/SolutionComponentExtractor
   downloads: 440
   summary: >-
-    Extraction d'une sous-solution à partir d'une solution non managée, pour ne livrer qu'un hotfix ou une fonctionnalité :
-    sélection des composants, aperçu live de customizations.xml et solution.xml, nettoyage des dépendances.
-  details: >-
-    Génération du .zip ou import direct dans l'environnement connecté, avec des avertissements sur les imports à risque.
+    Builds a sub-solution from an exported unmanaged solution to ship only a hotfix or one feature:
+    pick components, preview customizations.xml live, clean dependencies, then export the .zip or import it directly.
 
-- name: MergeIt – Record Merger for Dataverse
+- name: MergeIt – Record Merger
   icon: "🔀"
   year: 2026
   nuget: MergeIt-RecordMergerForDataverse
   github: https://github.com/AmraouiH/MergeIt
   downloads: 132
   summary: >-
-    Fusion de deux enregistrements champ par champ : comparaison côte à côte, choix des valeurs conservées,
-    fusion transactionnelle ou merge natif Dataverse (account, contact, lead, incident), réaffectation des enregistrements enfants.
+    Merges two records field by field with a side-by-side comparison: transactional merge or native Dataverse merge
+    (account, contact, lead, incident), with optional re-parenting of child records.
 
 - name: Phone Number Normalizer
   icon: "📞"
@@ -85,5 +79,5 @@
   github: ""
   downloads: 0
   summary: >-
-    Normalisation des numéros de téléphone Dataverse aux formats E.164, international ou national via libphonenumber :
-    analyse préalable, exclusion ligne à ligne, mise à jour par lots ExecuteMultiple avec dry run et rapport CSV.
+    Normalizes phone numbers in Dataverse to E.164, international or national format with libphonenumber:
+    preview first, exclude rows, batch updates with dry run and a CSV report.

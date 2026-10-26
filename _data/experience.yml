@@ -1,0 +1,47 @@
+- role: Dynamics 365 / Azure Technical Consultant
+  company: Freelance · Real estate client
+  period: Feb 2023 – Present
+  summary: Dynamics 365 v9.2 for customers, investments and cases.
+  points:
+    - Built an AI sentiment agent on Cases with Copilot Studio and Power Automate, so support teams can prioritise and escalate.
+    - Set up AI code review on pull requests with Claude Code to enforce Dynamics 365, C# and JavaScript conventions.
+    - Designed a Power Apps Generative Page giving a 360° view of Azure resources for monitoring.
+    - Plugins, workflows, JavaScript, PCF, Azure Functions, Service Bus, Data Factory and Blob Storage.
+    - Integrations with Adobe Campaign, web and back-office systems; CI/CD pipelines and releases.
+  stack: [Dynamics 365, Azure, C#, JavaScript, Copilot Studio, Claude Code, Terraform]
+
+- role: Power Platform Consultant
+  company: Freelance · Education
+  period: Jun 2023 – Dec 2023
+  summary: Canvas app to manage classes, students, sessions, invoices and tutors.
+  points:
+    - Designed the mobile Canvas App on top of SQL Server.
+    - Weekly Power Automate jobs, SharePoint, OneDrive, Outlook and Teams integration, email replies with Adaptive Cards.
+    - Tutor photos on Azure Blob Storage and Excel exports with Office Scripts.
+  stack: [Power Apps, Power Automate, Power BI, Adaptive Cards, SQL Server]
+
+- role: Dynamics CRM Technical Consultant
+  company: Freelance · Banking client
+  period: Dec 2020 – Jan 2023
+  summary: Three projects on Dynamics CRM 2016 v8.2, then v9.1.
+  points:
+    - Ariane: customers, transfers and campaigns. Plugins, SSRS, SSIS and C# batches, ClickDimensions, Aspose and Spire.
+    - Wealth Dynamix: WDX product integration, SSIS sync, SharePoint documents, PhantomPDF document generation.
+    - Migration to v9.1 and CI/CD release pipelines.
+  stack: [Dynamics CRM, C#, SQL Server, SSIS, SSRS, Azure DevOps]
+
+- role: Dynamics CRM Technical Consultant
+  company: SQLI · Tarkett
+  period: Jun 2018 – Nov 2020
+  summary: Global CRM for retailers, prospects and job sites.
+  points:
+    - WCF services exchanging data with BizTalk, ININ and SAP.
+    - Forms, views, JavaScript, plugins, workflows, SSRS reports and C# / SQL batches.
+  stack: [Dynamics CRM 2016, C#, WCF, SQL Server, SSRS]
+
+- role: Full Stack .NET Developer (final-year project)
+  company: SQLI
+  period: Jan 2018 – Jun 2018
+  summary: ASP.NET MVC web store connected to Dynamics CRM through a WCF service.
+  points: []
+  stack: [ASP.NET MVC 5, Entity Framework 6, WCF, Dynamics CRM]

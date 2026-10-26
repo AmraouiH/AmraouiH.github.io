@@ -5,9 +5,15 @@
   store: ""
   privacy: /privacy/
   summary: >-
-    Extension Chrome (Manifest V3) qui analyse le formulaire piloté par modèle ouvert dans l'onglet actif et produit
-    un rapport de bonnes pratiques : structure, performance, grilles, JavaScript (API client dépréciées, DOM / jQuery,
-    requêtes synchrones, OData v2), web resources HTML, données et logique.
+    A Chrome extension (Manifest V3) that reviews the model-driven form open in the active tab against Microsoft guidance,
+    in one click.
+  checks:
+    - Form structure and performance
+    - Subgrids and their views
+    - Deprecated client APIs (Xrm.Page)
+    - DOM and jQuery access, sync requests, OData v2
+    - HTML web resources
+    - Script load and run timing
   details: >-
-    Export du rapport en HTML autonome ou en JSON, interface anglais / français. Tout s'exécute dans le navigateur :
-    aucune donnée collectée ni transmise.
+    Export the report as standalone HTML or JSON, in English or French. Everything runs in the browser:
+    no data is collected or sent anywhere.

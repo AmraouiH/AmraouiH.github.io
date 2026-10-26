@@ -1,6 +1,7 @@
 # amraouih.github.io
 
-Portfolio de Hamza Amraoui (Jekyll / GitHub Pages).
+Portfolio of Hamza Amraoui (Jekyll / GitHub Pages).
 
-- Outils XrmToolBox : `_data/tools.yml`
-- Extension Chrome : `_data/extensions.yml` (renseigner `store` quand la fiche Chrome Web Store est en ligne)
+- XrmToolBox tools: `_data/tools.yml`
+- Chrome extension: `_data/extensions.yml` (set `store` once the Chrome Web Store listing is live)
+- Experience: `_data/experience.yml`

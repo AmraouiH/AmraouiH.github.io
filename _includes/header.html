@@ -1,22 +1,21 @@
-<header>
-    <a class="header-name" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
-    <nav>
-        <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">&#9776;</button>
-        <ul class="nav-menu">
-            {% for item in site.nav %}
-            <li><a href="{{ item.url | relative_url }}" class="{% if page.url == item.url %}active{% endif %}">{{ item.title }}</a></li>
-            {% endfor %}
-        </ul>
-    </nav>
+<header class="site-header">
+    <div class="header-inner">
+        <a class="logo" href="{{ '/' | relative_url }}"><span class="logo-mark">HA</span><span class="logo-name">{{ site.author.name }}</span></a>
+        <nav>
+            <ul class="nav-menu">
+                {% for item in site.nav %}
+                <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="icon-btn theme-toggle" aria-label="Toggle light and dark theme">
+                <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+            </button>
+            <button class="icon-btn nav-toggle" aria-label="Open menu" aria-expanded="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+            </button>
+        </div>
+    </div>
 </header>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const toggle = document.querySelector('.nav-toggle');
-    const menu = document.querySelector('.nav-menu');
-    toggle.addEventListener('click', function() {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', !expanded);
-        menu.classList.toggle('nav-menu-visible');
-    });
-});
-</script>

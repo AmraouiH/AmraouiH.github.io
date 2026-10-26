@@ -1,25 +1,28 @@
 title: Hamza Amraoui
-description: Consultant Technique Senior Microsoft Dynamics 365 | Power Platform | Azure | IA & GenAI. Contributeur XrmToolBox.
+description: Senior Microsoft Dynamics 365 Technical Consultant | Power Platform | Azure | AI & GenAI. XrmToolBox tool author.
 url: https://amraouih.github.io
-lang: fr
+lang: en
 
 author:
   name: Hamza Amraoui
+  role: Senior Dynamics 365 Technical Consultant
   email: hamzamraoui11@gmail.com
   github: https://github.com/AmraouiH
   avatar: https://avatars.githubusercontent.com/u/33428112?v=4
   blog: https://dyn365forlife.wixsite.com/my-site
-  xrmtoolbox: https://www.xrmtoolbox.com/plugins/EntityFieldsAnalyser/
+  location: Paris, France
 
 nav:
-  - title: À propos
-    url: /
-  - title: Outils
-    url: /outils/
-  - title: Expérience
-    url: /experience/
+  - title: About
+    url: /#about
+  - title: Tools
+    url: /#tools
+  - title: Experience
+    url: /#experience
+  - title: Skills
+    url: /#skills
   - title: Contact
-    url: /contact/
+    url: /#contact
 
 exclude:
   - README.md

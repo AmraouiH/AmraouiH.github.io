@@ -1,93 +1,256 @@
 ---
 layout: default
 ---
-<div class="page-header">
-    <h1>Bonjour, je suis Hamza</h1>
-</div>
+{% assign released = site.data.tools | where_exp: "t", "t.nuget != ''" %}
+{% assign total_downloads = 0 %}
+{% for t in released %}{% assign total_downloads = total_downloads | plus: t.downloads %}{% endfor %}
 
-<div class="container">
-    <div class="entry">
-        <div class="entry-left" style="margin-top: 10px;">
-            <p><strong>Consultant Technique Senior Microsoft Dynamics 365 qui conçoit, développe et livre des solutions CRM, Power Platform et Azure, et qui outille la communauté avec des plugins XrmToolBox.</strong></p>
+<section class="hero" id="top">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="reveal">
+                <span class="status"><span class="status-dot"></span>Freelance consultant · {{ site.author.location }}</span>
+                <h1>Hi, I'm Hamza.<br />I build <span class="gradient-text">Dynamics 365</span> solutions that ship.</h1>
+                <p class="hero-lead">
+                    <strong>Senior Dynamics 365 Technical Consultant</strong> working across Power Platform, Azure and AI.
+                    I design and ship CRM solutions for real-estate, banking and industry clients, and I build
+                    <strong>open source XrmToolBox tools</strong> used by thousands of Dataverse developers.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#tools">
+                        Explore my tools
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                    <a class="btn btn-ghost" href="#contact">Get in touch</a>
+                    <a class="btn btn-ghost" href="{{ site.author.github }}" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual reveal">
+                <div class="avatar-ring">
+                    <img src="{{ site.author.avatar }}&s=720" alt="Portrait of {{ site.author.name }}" />
+                </div>
+                <div class="float-card one"><span class="emoji">🧰</span><div><strong>{{ site.data.tools.size }} tools</strong>on XrmToolBox</div></div>
+                <div class="float-card two"><span class="emoji">🏅</span><div><strong>MB-210</strong>Certified</div></div>
+            </div>
+        </div>
+
+        <div class="stats reveal">
+            <div class="stat">
+                <div class="stat-value gradient-text"><span data-total-downloads>{{ total_downloads | divided_by: 1000 }}k+</span></div>
+                <div class="stat-label">Tool downloads</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value gradient-text">8+</div>
+                <div class="stat-label">Years on Dynamics CRM</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value gradient-text">{{ site.data.tools.size | plus: site.data.extensions.size }}</div>
+                <div class="stat-label">Open source tools</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value gradient-text">5</div>
+                <div class="stat-label">Certifications</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="about">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">What I do</span>
+            <h2>From CRM delivery to AI agents</h2>
+            <p>I take Dynamics 365 projects from analysis and architecture to production releases, and I build the tooling that makes the job faster.</p>
+        </div>
+        <div class="grid-3">
+            <div class="card about-card reveal">
+                <div class="card-icon">⚙️</div>
+                <h3>Dynamics 365 &amp; Power Platform</h3>
+                <p>Customisation and development on Dynamics CRM 2016 through v9.2.</p>
+                <ul>
+                    <li>Plugins, workflows, JavaScript and PCF</li>
+                    <li>Canvas apps and Power Automate</li>
+                    <li>CI/CD, releases and v9 migrations</li>
+                </ul>
+            </div>
+            <div class="card about-card reveal">
+                <div class="card-icon">🤖</div>
+                <h3>AI &amp; Generative AI</h3>
+                <p>Putting AI to work inside the CRM and the development process.</p>
+                <ul>
+                    <li>Copilot Studio sentiment agent on Cases</li>
+                    <li>AI code review on pull requests with Claude Code</li>
+                    <li>Power Apps Generative Pages</li>
+                </ul>
+            </div>
+            <div class="card about-card reveal">
+                <div class="card-icon">☁️</div>
+                <h3>Azure &amp; integrations</h3>
+                <p>Connecting Dynamics 365 to the rest of the business.</p>
+                <ul>
+                    <li>Functions, Service Bus queues and topics</li>
+                    <li>Data Factory, Blob Storage, Key Vault</li>
+                    <li>Adobe Campaign, SAP, BizTalk, SharePoint</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="tools">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Open source</span>
+            <h2>Tools for the Dataverse community</h2>
+            <p>Free XrmToolBox plugins I wrote to solve problems I kept running into on projects. Install them from the XrmToolBox Tool Library.</p>
+        </div>
+        <div class="tools-grid">
+            {% for tool in site.data.tools %}
+            <article class="card tool-card reveal{% if tool.featured %} featured{% endif %}">
+                <div class="tool-top">
+                    <div class="card-icon">{{ tool.icon }}</div>
+                    {% if tool.nuget != "" %}
+                    <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span class="downloads" data-nuget="{{ tool.nuget }}">{{ tool.downloads }}</span></span>
+                    {% else %}
+                    <span class="chip chip-muted">Coming soon</span>
+                    {% endif %}
+                </div>
+                <h3>{{ tool.name }}</h3>
+                <div class="tool-meta">XrmToolBox · {{ tool.year }}</div>
+                <p>{{ tool.summary }}</p>
+                {% if tool.nuget != "" %}
+                <div class="tool-links">
+                    <a class="btn btn-primary btn-sm" href="https://www.xrmtoolbox.com/plugins/{{ tool.nuget }}/" target="_blank" rel="noopener">XrmToolBox</a>
+                    <a class="btn btn-ghost btn-sm" href="https://www.nuget.org/packages/{{ tool.nuget }}" target="_blank" rel="noopener">NuGet</a>
+                    {% if tool.github != "" %}<a class="btn btn-ghost btn-sm" href="{{ tool.github }}" target="_blank" rel="noopener">Source</a>{% endif %}
+                </div>
+                {% endif %}
+            </article>
+            {% endfor %}
+        </div>
+
+        {% for ext in site.data.extensions %}
+        <div class="extension reveal" id="chrome-extension">
             <div>
-                <div class="bio-list">Consultant Technique Dynamics 365 / Azure <strong>freelance</strong> depuis 2020, basé à Paris</div>
-                <div class="bio-list">Plus de <strong>8 ans</strong> sur Dynamics CRM (2016, v8.2, v9.x) : immobilier, banque, industrie</div>
-                <div class="bio-list">Auteur de <a href="{{ '/outils/' | relative_url }}">8 outils XrmToolBox</a> et d'une <a href="{{ '/outils/#extension-chrome' | relative_url }}">extension Chrome</a>, avec <strong><span id="total-downloads">80k+</span></strong> téléchargements cumulés</div>
-                <div class="bio-list">IA &amp; GenAI : agents <strong>Copilot Studio</strong>, revue de code automatisée avec <strong>Claude Code</strong>, Generative Pages Power Apps</div>
-                <div class="bio-list">Certifié Microsoft <strong>MB-200, MB-210, PL-900, AZ-900</strong> et Scrum Foundation (SFPC)</div>
-                <div class="bio-list">Blog <a href="{{ site.author.blog }}" target="_blank" rel="noopener">THINK DEV SHARE</a> : astuces de configuration et de développement Dynamics CRM / Power Platform</div>
+                {% if ext.store != "" %}
+                <span class="chip">Chrome extension · {{ ext.year }}</span>
+                {% else %}
+                <span class="chip">Chrome extension · Coming soon to the Chrome Web Store</span>
+                {% endif %}
+                <h3>{{ ext.icon }} {{ ext.name }}</h3>
+                <p>{{ ext.summary }}</p>
+                <p style="margin-top: 12px;">{{ ext.details }}</p>
+                <div class="tool-links">
+                    {% if ext.store != "" %}
+                    <a class="btn btn-primary btn-sm" href="{{ ext.store }}" target="_blank" rel="noopener">Add to Chrome</a>
+                    {% endif %}
+                    <a class="btn btn-ghost btn-sm" href="{{ ext.privacy | relative_url }}">Privacy policy</a>
+                </div>
             </div>
-            <br />
-            <a href="{{ '/contact/' | relative_url }}" class="button">Me contacter</a>
-            <a href="{{ '/experience/' | relative_url }}" class="button secondary">Voir mon parcours</a>
-            <br /><br />
+            <ul class="check-list">
+                {% for check in ext.checks %}<li>{{ check }}</li>{% endfor %}
+            </ul>
         </div>
-        <div class="entry-right" style="margin-top: 30px;">
-            <a href="{{ site.author.github }}" target="_blank" rel="noopener"><img class="portrait" src="{{ site.author.avatar }}&s=460" alt="Hamza Amraoui" /></a>
-            <p>Hamza Amraoui</p>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="section" id="experience">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Experience</span>
+            <h2>Where I've worked</h2>
+            <p>Freelance since 2020, after nearly three years at SQLI.</p>
+        </div>
+        <div class="timeline">
+            {% for job in site.data.experience %}
+            <article class="card timeline-item reveal">
+                <div class="timeline-head">
+                    <h3>{{ job.role }}</h3>
+                    <span class="period">{{ job.period }}</span>
+                </div>
+                <div class="company">{{ job.company }}</div>
+                <p>{{ job.summary }}</p>
+                {% if job.points.size > 0 %}
+                <ul>{% for point in job.points %}<li>{{ point }}</li>{% endfor %}</ul>
+                {% else %}<div style="height: 14px;"></div>{% endif %}
+                <div class="chip-row">{% for s in job.stack %}<span class="chip chip-muted">{{ s }}</span>{% endfor %}</div>
+            </article>
+            {% endfor %}
         </div>
     </div>
-</div>
+</section>
 
-<div class="container">
-    <div class="entry column">
-        <h2>Portfolio</h2>
-
-        <p class="section-title"><strong>🛠️ Outils open source pour la communauté Dynamics 365</strong></p>
-        <ul>
-            <li><a class="strong-link" href="https://www.xrmtoolbox.com/plugins/EntityFieldsAnalyser/" target="_blank" rel="noopener">Entity Fields Analyser</a> : reporting de l'état de santé d'une entité et du volume des champs utilisés, <strong>+58k téléchargements</strong> depuis 2021.</li>
-            <li><a class="strong-link" href="https://www.xrmtoolbox.com/plugins/BulkPrefixSuffixFieldsName/" target="_blank" rel="noopener">Bulk Prefix/Suffix Fields Name</a> : renommage en masse des champs, <strong>+20k téléchargements</strong> depuis 2021.</li>
-            <li>Six nouveaux outils en 2026 : <a class="strong-link" href="https://www.xrmtoolbox.com/plugins/DataverseCartographer/" target="_blank" rel="noopener">Dataverse Cartographer</a>, <a class="strong-link" href="https://www.xrmtoolbox.com/plugins/SystemJobsDoctor/" target="_blank" rel="noopener">System Jobs Doctor</a>, <a class="strong-link" href="https://www.xrmtoolbox.com/plugins/DataverseRecordRecovery/" target="_blank" rel="noopener">Dataverse Record Recovery</a>, <a class="strong-link" href="https://www.xrmtoolbox.com/plugins/SolutionComponentExtractor/" target="_blank" rel="noopener">Solution Component Extractor</a>, <a class="strong-link" href="https://www.xrmtoolbox.com/plugins/MergeIt-RecordMergerForDataverse/" target="_blank" rel="noopener">MergeIt</a> et Phone Number Normalizer.</li>
-            <li><a class="strong-link" href="{{ '/outils/#extension-chrome' | relative_url }}">Form Analyzer for Dynamics 365</a> : extension Chrome qui audite un formulaire piloté par modèle selon les recommandations Microsoft.</li>
-        </ul>
-
-        <p class="section-title"><strong>🤖 IA &amp; agents génératifs</strong></p>
-        <ul>
-            <li>Agent IA de <strong>détection de sentiment</strong> sur les Cases (Customer Service) : agent Copilot Studio connecté à Dynamics 365 via Power Automate, pour prioriser et escalader les demandes.</li>
-            <li><strong>Revue de code automatisée</strong> des pull requests avec Claude Code (CLI) : conventions Dynamics 365 / C# / JavaScript, détection de régressions avant la merge.</li>
-            <li><strong>Generative Page Power Apps</strong> : vue 360 des ressources Azure (Functions, Topics / Queues, Data Factory, Blob Storage) pour le monitoring.</li>
-        </ul>
-
-        <p class="section-title"><strong>☁️ Dynamics 365 &amp; Azure en production</strong></p>
-        <ul>
-            <li>Développement et intégration : plugins, workflows, JavaScript, PCF, Azure Functions, batchs C# / SQL, flux SSIS.</li>
-            <li>Intégrations tierces : Adobe Campaign, ClickDimensions, SAP, BizTalk, SharePoint, DocuSign, WDX.</li>
-            <li>Livraison : pipelines CI/CD Azure DevOps, gestion des branches, mises en production et migrations vers Dynamics CRM v9.</li>
-        </ul>
-    </div>
-</div>
-
-<div class="container">
-    <div class="entry column">
-        <h2>Certifications</h2>
-        <ul>
-            <li><strong>PL-900</strong> - Microsoft Certified: Power Platform Fundamentals <span class="meta">(avril 2021)</span></li>
-            <li><strong>MB-210</strong> - Microsoft Dynamics 365 for Sales <span class="meta">(novembre 2020)</span></li>
-            <li><strong>AZ-900</strong> - Microsoft Azure Fundamentals <span class="meta">(août 2020)</span></li>
-            <li><strong>MB-200</strong> - Microsoft Power Platform + Dynamics 365 Core <span class="meta">(mars 2020)</span></li>
-            <li><strong>SFPC</strong> - Scrum Foundation Professional Certificate <span class="meta">(juin 2020)</span></li>
-        </ul>
-    </div>
-</div>
-
-<div class="container">
-    <div class="entry column">
-        <h2>Derniers contenus</h2>
-        <div style="margin-bottom: 15px;">
-            <div><strong>Dernier outil :</strong> <a class="strong-link" href="https://www.xrmtoolbox.com/plugins/DataverseCartographer/" target="_blank" rel="noopener">Dataverse Cartographer</a></div>
-            <div class="meta">XrmToolBox Tool Library - 2026</div>
-            <div style="margin-top: 10px;">
-                <a href="{{ '/outils/' | relative_url }}" class="button">Voir tous les outils</a>
+<section class="section" id="skills">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Skills</span>
+            <h2>Toolbox &amp; certifications</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="card reveal">
+                <h3>Dynamics 365 / CRM</h3>
+                <div class="chip-row">
+                    <span class="chip">Plugins</span><span class="chip">Custom activities</span><span class="chip">Web API</span><span class="chip">Security roles</span><span class="chip">PCF</span><span class="chip">FetchXML</span><span class="chip">QueryExpression</span><span class="chip">XrmToolBox</span>
+                </div>
+            </div>
+            <div class="card reveal">
+                <h3>Power Platform &amp; AI</h3>
+                <div class="chip-row">
+                    <span class="chip">Power Apps</span><span class="chip">Power Automate</span><span class="chip">Copilot Studio</span><span class="chip">Generative Pages</span><span class="chip">Claude Code</span><span class="chip">Prompt engineering</span>
+                </div>
+            </div>
+            <div class="card reveal">
+                <h3>Azure &amp; data</h3>
+                <div class="chip-row">
+                    <span class="chip">Functions</span><span class="chip">Queues / Topics</span><span class="chip">Data Factory</span><span class="chip">Event Grid</span><span class="chip">Key Vault</span><span class="chip">Terraform</span><span class="chip">SQL Server</span><span class="chip">SSIS</span><span class="chip">SSRS</span>
+                </div>
+            </div>
+            <div class="card reveal">
+                <h3>.NET &amp; delivery</h3>
+                <div class="chip-row">
+                    <span class="chip">C#</span><span class="chip">ASP.NET MVC</span><span class="chip">WCF</span><span class="chip">WinForms</span><span class="chip">LINQ</span><span class="chip">OData</span><span class="chip">Azure DevOps</span><span class="chip">CI/CD</span><span class="chip">Scrum</span>
+                </div>
+            </div>
+            <div class="card reveal">
+                <h3>Certifications</h3>
+                <ul class="cert-list">
+                    <li><span class="cert-code">PL-900</span>Power Platform Fundamentals</li>
+                    <li><span class="cert-code">MB-210</span>Dynamics 365 for Sales</li>
+                    <li><span class="cert-code">AZ-900</span>Azure Fundamentals</li>
+                    <li><span class="cert-code">MB-200</span>Power Platform + Dynamics 365 Core</li>
+                    <li><span class="cert-code">SFPC</span>Scrum Foundation Professional</li>
+                </ul>
+            </div>
+            <div class="card reveal">
+                <h3>Education &amp; languages</h3>
+                <ul class="cert-list">
+                    <li><span class="cert-code">2018</span>MSc Embedded &amp; Mobile Systems, ENSA Tétouan</li>
+                    <li><span class="cert-code">2016</span>BSc Networks, Security &amp; IT Systems, FSSM Marrakech</li>
+                    <li><span class="cert-code">Lang.</span>English, French, Arabic</li>
+                </ul>
             </div>
         </div>
-        <div>
-            <div><strong>Blog :</strong> <a class="strong-link" href="{{ site.author.blog }}" target="_blank" rel="noopener">THINK DEV SHARE</a></div>
-            <div class="meta">Astuces Dynamics CRM / Power Platform et documentation des outils XrmToolBox</div>
-            <div style="margin-top: 10px;">
-                <a href="{{ site.author.blog }}" class="button" target="_blank" rel="noopener">Lire le blog</a>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <div class="container">
+        <div class="contact-card reveal">
+            <span class="eyebrow">Contact</span>
+            <h2>Let's work <span class="gradient-text">together</span></h2>
+            <p>Need a Dynamics 365, Power Platform or Azure consultant, or have an idea for one of my tools? I'd be glad to hear from you.</p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="mailto:{{ site.author.email }}">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5z"/></svg>
+                    {{ site.author.email }}
+                </a>
+                <a class="btn btn-ghost" href="{{ site.author.blog }}" target="_blank" rel="noopener">Read my blog</a>
             </div>
+            <div class="contact-meta">📍 {{ site.author.location }}</div>
         </div>
     </div>
-</div>
-
-<script src="{{ '/assets/downloads.js' | relative_url }}"></script>
+</section>
